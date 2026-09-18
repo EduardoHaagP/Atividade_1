@@ -1,5 +1,5 @@
 from enum import Enum
-
+from Requisito3 import Usuario, Veiculo, Carro, Moto, TipoVaga
 
 class TipoVaga(Enum):
     COMUM = "comum"
@@ -46,11 +46,14 @@ class Estacionamento:
             resumo[v.tipo] = resumo.get(v.tipo, 0) + 1
         return resumo
 
-    def estacionar(self, tipo: TipoVaga) -> Vaga | None:
-        """Ocupa a primeira vaga livre do tipo pedido, ou retorna None."""
-        livres = self.vagas_disponiveis(tipo)
-        if not livres:
-            return None
-        vaga = livres[0]
-        vaga.ocupar()
-        return vaga
+    def estacionar(self, usuario: Usuario) -> Vaga | None:
+        if not usuario.cadastro_valido():
+            raise ValueError("Cadastro expirado")
+
+        for tipo in usuario.vagas_permitidas():
+            livres = self.vagas_disponiveis(tipo)
+            if livres:
+                vaga = livres[0]
+                vaga.ocupar()
+                return vaga
+        return None

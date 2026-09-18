@@ -1,13 +1,4 @@
-from enum import Enum
 from Requisito3 import Usuario, Veiculo, Carro, Moto, TipoVaga
-
-class TipoVaga(Enum):
-    COMUM = "comum"
-    IDOSO = "idoso"
-    PCD = "pcd"
-    MOTO = "moto"
-    ELETRICO = "eletrico"
-
 
 class Vaga:
     def __init__(self, numero: int, tipo: TipoVaga):

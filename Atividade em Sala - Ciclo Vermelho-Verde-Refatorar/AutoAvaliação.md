@@ -32,3 +32,5 @@ Qual parte deu mais trabalho: Tive um pouco de dificuldade de realmente entender
 
 Uso de IA: Usei a IA para entender o projeto e gerar os códigos dos testes (a partir da tabela de casos que
 defini), o green e a refatoração. Ajudou a ter um ciclo completo rápido e a entender o Strategy. 
+
+https://claude.ai/share/21304e02-dea4-4e8a-9167-966fb18f9fcd
